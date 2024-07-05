@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  nodejs:
+    image: getting-started:latest
+    container_name: nodejs
+    ports:
+      - "3000:8080"
+    depends_on:
+      - postgres
+      - redis
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=bdtest
+      - POSTGRES_USER=manuel
+      - POSTGRES_PASSWORD=123456
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
