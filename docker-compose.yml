@@ -5,7 +5,7 @@ services:
     image: getting-started:latest
     container_name: nodejs
     ports:
-      - "3000:8080"
+      - "3000:3000"
     depends_on:
       - postgres
       - redis
@@ -14,7 +14,7 @@ services:
     image: postgres:latest
     container_name: postgres
     ports:
-      - "5432:5432"
+      - "5431:5432"
     environment:
       - POSTGRES_DB=bdtest
       - POSTGRES_USER=manuel
